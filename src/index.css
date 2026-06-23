@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: linear-gradient(135deg, #0a2f3a, #0a1a1f); padding: 20px; }
+
+h1 { color: #FFD700; text-align: center; margin-bottom: 10px; font-size: 1.8rem; }
+.sub { text-align: center; color: #ddd; margin-bottom: 25px; font-size: 0.85rem; }
+
+/* ==================== ইভেন্ট ব্যানার ==================== */
+.event-banner {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border: 4px solid transparent;
+}
+.event-banner:hover {
+    transform: scale(1.1);
+    border-color: #FFD700;
+    box-shadow: 0 0 70px rgba(255,215,0,0.7), 0 15px 50px rgba(0,0,0,0.5);
+}
+.event-banner:focus-visible {
+    transform: scale(1.1);
+    outline: 6px solid #FFD700;
+    outline-offset: 8px;
+    box-shadow: 0 0 70px rgba(255,215,0,0.7), 0 15px 50px rgba(0,0,0,0.5);
+}
+.event-title { font-size: 1.8rem; font-weight: bold; color: #fff; }
+.event-desc { color: #fff9c4; margin-top: 8px; font-size: 1rem; }
+.event-live { background: #ff0; color: #000; display: inline-block; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; font-weight: bold; margin-top: 8px; }
+
+/* ==================== ক্যাটাগরি বাটন ==================== */
+.category-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+.cat-btn {
+    background: rgba(255,255,255,0.15);
+    color: #ddd;
+    border: 2px solid rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+.cat-btn:hover {
+    background: rgba(255,215,0,0.4);
+    border-color: #FFD700;
+    color: #FFD700;
+    transform: scale(1.12);
+    box-shadow: 0 0 40px rgba(255,215,0,0.4);
+}
+.cat-btn.active {
+    background: #FFD700;
+    color: #1a2f3a;
+    border-color: #FFD700;
+    box-shadow: 0 0 45px rgba(255,215,0,0.6);
+}
+.cat-btn:focus-visible {
+    outline: 4px solid #FFD700;
+    outline-offset: 4px;
+    transform: scale(1.12);
+}
+
+/* ==================== চ্যানেল গ্রিড ==================== */
+.channels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-bottom: 30px; }
+
+/* ==================== চ্যানেল কার্ড ==================== */
+.channel-card {
+    background: white;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 4px solid transparent;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.channel-card:hover {
+    transform: scale(1.25) translateY(-10px);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.85), 0 0 80px rgba(255,215,0,0.5);
+    border-color: #FFD700;
+    z-index: 20;
+    background: #ffffff;
+}
+.channel-card:focus-visible {
+    transform: scale(1.25) translateY(-10px);
+    outline: 6px solid #FFD700;
+    outline-offset: 15px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.85), 0 0 80px rgba(255,215,0,0.6);
+    z-index: 20;
+    background: #ffffff;
+}
+.channel-card:active { transform: scale(0.95); }
+.channel-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #f0f0f0;
+    padding: 8px;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+.channel-card:hover img,
+.channel-card:focus-visible img {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px rgba(255,215,0,0.5);
+}
+.channel-name {
+    font-weight: bold;
+    margin: 8px 0;
+    color: #1a3f4a;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+.channel-card:hover .channel-name,
+.channel-card:focus-visible .channel-name {
+    color: #FFD700;
+    font-size: 1.05rem;
+    text-shadow: 0 0 30px rgba(255,215,0,0.4);
+}
+.channel-category {
+    font-size: 0.65rem;
+    color: #888;
+    margin-top: 3px;
+    transition: all 0.3s ease;
+}
+.channel-card:hover .channel-category,
+.channel-card:focus-visible .channel-category {
+    color: #333;
+}
+.live-badge {
+    background: red;
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 4px;
+    animation: pulse 1.5s infinite;
+}
+.channel-card:hover .live-badge,
+.channel-card:focus-visible .live-badge {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ==================== প্লেয়ার ==================== */
+.player-area { background: #000; border-radius: 16px; overflow: hidden; margin-bottom: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; width: 100%; }
+.player-header { background: #1a1a1a; padding: 12px 15px; color: #FFD700; font-weight: bold; font-size: 0.95rem; border-bottom: 1px solid #333; }
+.video-wrapper { width: 100%; background: #000; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16/9; min-height: 50vh; max-height: 85vh; overflow: hidden; }
+.loading-text { color: #FFD700; font-size: 1.2rem; text-align: center; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.error-text { color: #ff4444; font-size: 1rem; text-align: center; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+/* ==================== সুজেশন ==================== */
+.suggestions-section { margin: 12px 0 20px; }
+.suggestions-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.suggestions-header h3 { color: #FFD700; font-size: 1.0rem; display: flex; align-items: center; gap: 6px; }
+.home-back-btn {
+    background: rgba(255,215,0,0.2);
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 6px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+.home-back-btn:hover {
+    background: #FFD700;
+    color: #1a2f3a;
+    transform: scale(1.12);
+    box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
+.home-back-btn:focus-visible {
+    outline: 4px solid #FFD700;
+    outline-offset: 4px;
+    transform: scale(1.12);
+}
+
+.suggestions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+.suggestion-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid transparent;
+}
+.suggestion-card:hover {
+    transform: scale(1.18);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 50px rgba(255,215,0,0.35);
+    border-color: #FFD700;
+    z-index: 10;
+}
+.suggestion-card:focus-visible {
+    transform: scale(1.18);
+    outline: 5px solid #FFD700;
+    outline-offset: 6px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 50px rgba(255,215,0,0.45);
+    z-index: 10;
+}
+.suggestion-card img { width: 60px; height: 60px; object-fit: contain; border-radius: 50%; background: #f0f0f0; padding: 6px; transition: transform 0.3s; margin: 0 auto; display: block; }
+.suggestion-card:hover img,
+.suggestion-card:focus-visible img { transform: scale(1.12); }
+.suggestion-name { font-weight: bold; margin-top: 8px; color: #1a3f4a; font-size: 0.8rem; transition: color 0.3s; }
+.suggestion-card:hover .suggestion-name,
+.suggestion-card:focus-visible .suggestion-name { color: #FFD700; font-size: 0.9rem; }
+.live-badge-small { background: red; color: white; font-size: 0.6rem; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-top: 5px; animation: pulse 1.5s infinite; }
+
+/* ==================== অ্যাড ==================== */
+.ad-bottom { display: flex; justify-content: center; align-items: center; margin: 20px 0 15px; min-height: 100px; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 10px; }
+footer { text-align: center; color: #aaa; margin-top: 20px; font-size: 0.7rem; }
+
+/* ==================== টিভি / বড় স্ক্রিন ==================== */
+@media (min-width: 1280px) {
+    body { padding: 30px; }
+    h1 { font-size: 2.8rem; }
+    .sub { font-size: 1.2rem; }
+    .event-title { font-size: 2.8rem; }
+    .event-desc { font-size: 1.3rem; }
+    .channels-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
+    .channel-card { padding: 25px; }
+    .channel-card img { width: 100px; height: 100px; }
+    
+    .channel-card:hover { transform: scale(1.35) translateY(-15px); box-shadow: 0 35px 80px rgba(0,0,0,0.9), 0 0 100px rgba(255,215,0,0.6); border-width: 5px; }
+    .channel-card:focus-visible { transform: scale(1.35) translateY(-15px); outline: 8px solid #FFD700; outline-offset: 20px; box-shadow: 0 35px 80px rgba(0,0,0,0.9), 0 0 100px rgba(255,215,0,0.7); border-width: 5px; }
+    .channel-card:hover .channel-name,
+    .channel-card:focus-visible .channel-name { font-size: 1.4rem; text-shadow: 0 0 40px rgba(255,215,0,0.5); }
+    .channel-card:hover img,
+    .channel-card:focus-visible img { transform: scale(1.2); box-shadow: 0 0 50px rgba(255,215,0,0.6); }
+    .event-banner:hover { transform: scale(1.12); box-shadow: 0 0 80px rgba(255,215,0,0.8), 0 15px 50px rgba(0,0,0,0.5); }
+    .event-banner:focus-visible { transform: scale(1.12); outline: 8px solid #FFD700; outline-offset: 10px; box-shadow: 0 0 80px rgba(255,215,0,0.8), 0 15px 50px rgba(0,0,0,0.5); }
+    .cat-btn:hover { transform: scale(1.18); box-shadow: 0 0 50px rgba(255,215,0,0.5); }
+    .suggestion-card:hover { transform: scale(1.22); box-shadow: 0 30px 70px rgba(0,0,0,0.7), 0 0 60px rgba(255,215,0,0.35); }
+    .suggestion-card:focus-visible { transform: scale(1.22); outline: 6px solid #FFD700; outline-offset: 8px; box-shadow: 0 30px 70px rgba(0,0,0,0.7), 0 0 60px rgba(255,215,0,0.45); }
+}
+
+/* ==================== ডেস্কটপ/ল্যাপটপ ==================== */
+@media (min-width: 769px) and (max-width: 1279px) {
+    .channel-card:hover { transform: scale(1.25) translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.75), 0 0 60px rgba(255,215,0,0.35); }
+    .channel-card:focus-visible { transform: scale(1.25) translateY(-10px); outline: 6px solid #FFD700; outline-offset: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.75), 0 0 60px rgba(255,215,0,0.45); }
+}
+
+/* ==================== মোবাইল ==================== */
+@media (max-width: 600px) {
+    .channels-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+    .channel-card { padding: 12px; }
+    .channel-card img { width: 60px; height: 60px; }
+    .channel-name { font-size: 0.75rem; }
+    .channel-card:hover { transform: scale(1.08) translateY(-4px); border-color: #FFD700; box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 25px rgba(255,215,0,0.2); }
+    .channel-card:focus-visible { transform: scale(1.08) translateY(-4px); outline: 4px solid #FFD700; outline-offset: 4px; box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 25px rgba(255,215,0,0.2); }
+    .channel-card:hover .channel-name,
+    .channel-card:focus-visible .channel-name { font-size: 0.82rem; }
+    .event-banner:hover { transform: scale(1.04); }
+    .event-title { font-size: 1.3rem; }
+    .event-desc { font-size: 0.9rem; }
+    .cat-btn { padding: 6px 14px; font-size: 0.8rem; }
+    .cat-btn:hover { transform: scale(1.06); }
+}

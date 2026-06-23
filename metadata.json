@@ -1,0 +1,6 @@
+{
+  "name": "Nexora Tv Pc",
+  "description": "Live TV Streaming Application for Desktop and Web",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
