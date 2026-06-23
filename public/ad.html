@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  window.onerror = function(message, source, lineno, colno, error) {
+    return true;
+  };
+  window.addEventListener('error', function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+  }, true);
+  window.addEventListener('unhandledrejection', function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+  }, true);
+  console.error = function() {};
+</script>
+<style>
+  body { 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: transparent; 
+    overflow: hidden; 
+    width: 100vw;
+    height: 100vh;
+  }
+  #adWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+<div id="adWrap">
+  <script type="text/javascript">
+      var atOptions = {
+          'key' : '7bc66073f87704a3289310f1cc22aa75',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+      };
+  </script>
+  <script type="text/javascript" src="https://criminaldissolved.com/7bc66073f87704a3289310f1cc22aa75/invoke.js"></script>
+</div>
+</body>
+</html>

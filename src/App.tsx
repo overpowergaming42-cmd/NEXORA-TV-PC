@@ -72,32 +72,12 @@ export default function App() {
       )}
 
       <div className="ad-bottom">
-        <div id="adContainer">
+        <div id="adContainer" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
           <iframe 
-            srcDoc={`<!DOCTYPE html>
-              <html>
-              <head>
-              <script>
-                window.onerror = function(e) { return true; };
-              </script>
-              <style>body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }</style>
-              </head>
-              <body>
-              <script type="text/javascript">
-                  var atOptions = {
-                      'key' : '7bc66073f87704a3289310f1cc22aa75',
-                      'format' : 'iframe',
-                      'height' : 90,
-                      'width' : 728,
-                      'params' : {}
-                  };
-              </script>
-              <script type="text/javascript" src="https://criminaldissolved.com/7bc66073f87704a3289310f1cc22aa75/invoke.js"></script>
-              </body>
-              </html>`}
-            style={{ border: 'none', width: '100%', maxWidth: '728px', height: '90px' }} 
+            src="/ad.html"
+            style={{ border: 'none', width: '100%', height: '90px', margin: '0 auto', display: 'block', overflow: 'hidden' }} 
             title="Advertisement"
-            sandbox="allow-scripts allow-popups allow-same-origin"
+            sandbox="allow-scripts allow-popups allow-same-origin allow-top-navigation-by-user-activation"
           />
         </div>
       </div>
